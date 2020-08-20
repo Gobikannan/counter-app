@@ -32,7 +32,7 @@ class Counter extends Component {
     this.setState({ count: this.state.count + 1 });
   };
 
-  renderCount() {
+  formatCount() {
     return this.state.count === 0 ? "Zero" : this.state.count;
   }
 
@@ -40,7 +40,7 @@ class Counter extends Component {
     return (
       <div>
         <span className="badge badge-primary m-2" style={{ fontSize: 20 }}>
-          {this.renderCount()}
+          {this.formatCount()}
         </span>
         <button className="btn btn-primary" onClick={this.handleIncrement}>
           Increment

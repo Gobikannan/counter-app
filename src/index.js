@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
+import "font-awesome/css/font-awesome.css";
 
-import Counter from "./components/counter";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
