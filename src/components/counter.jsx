@@ -17,8 +17,37 @@ class Counter extends Component {
     );
   }
 
+  //   constructor() {
+  //     super();
+  //     this.handleIncrement = this.handleIncrement.bind(this);
+  //   }
+
+  //   handleIncrement() {
+  //     console.log("Increment Clicked", this);
+  //   }
+
+  // arrow function solves this instance issue and no need to use contructor and bind(this) to event
+  handleIncrement = () => {
+    console.log("Increment Clicked", this);
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  renderCount() {
+    return this.state.count === 0 ? "Zero" : this.state.count;
+  }
+
   render() {
-    return <div>{this.renderTags()}</div>;
+    return (
+      <div>
+        <span className="badge badge-primary m-2" style={{ fontSize: 20 }}>
+          {this.renderCount()}
+        </span>
+        <button className="btn btn-primary" onClick={this.handleIncrement}>
+          Increment
+        </button>
+        {this.renderTags()}
+      </div>
+    );
   }
 }
 
